@@ -6,16 +6,16 @@ Currently this Prototype is missing a mobile application stack in place of Next.
 
 
 ## Prerequisites
-•	Install Node
-•	Install Python
-•	Install Git
-•	Create a Google account.
-•	Create a Github account.
-•	Create a Vercel account  to Deploy Next.JS apps 
-•	Create a Supabase account for database.
-•	Install VScode 
-•	Add python app on VScode
-•	Add indent-rainbow on VScode
+- Install Node
+- Install Python
+- Install Git
+- Create a Google account.
+- Create a Github account.
+- Create a Vercel account  to Deploy Next.JS apps 
+- Create a Supabase account for database.
+- Install VScode 
+- Add python app on VScode
+- Add indent-rainbow on VScode
 
 
 ## The Stack
