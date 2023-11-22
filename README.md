@@ -21,8 +21,8 @@ Currently this Prototype is missing a mobile application stack in place of Next.
 ## The Stack
 
 Next.JS -> Vercel 
-Flask App -> Google Cloud
-Supabase -> Cloud Relationdata it use PostgreSQL. 
+Flask App -> Google Cloud ->
+Supabase (PostgresSQL)
 
 This stack doesn't cover database migration, & updating data in a database. Well for prototyping 
 
