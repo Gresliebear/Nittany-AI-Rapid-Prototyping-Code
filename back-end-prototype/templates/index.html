@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Input</title>
+</head>
+<body>
+    <h1>Enter Model Parameters</h1>
+    <form id="modelForm">
+        <!-- Your input fields here -->
+        <label for="ticker">Ticker:</label>
+        <input type="text" id="ticker" name="ticker"><br><br>
+
+        <label for="num_iter">Number of Iterations:</label>
+        <input type="number" id="num_iter" name="num_iter"><br><br>
+
+        <label for="dollars">Dollars:</label>
+        <input type="number" id="dollars" name="dollars"><br><br>
+
+        <label for="num_months">Number of Months:</label>
+        <input type="number" id="num_months" name="num_months"><br><br>
+
+        <input type="button" value="Submit" onclick="submitForm()">
+    </form>
+
+    <!-- Add a div to display the results -->
+    <div id="result">
+        <h2>Results:</h2>
+        <pre id="modelOutput"></pre>
+    </div>
+
+    <!-- Add script tag to trigger the submitForm()  -->
+    <script>
+        function submitForm() {
+
+        // Create a new FormData object, capturing the data from the form with ID 'modelForm'
+        const formData = new FormData(document.getElementById('modelForm'));
+
+        // using the fetch method which is async we can send a POST request 
+        // to the '/call-model' route or endpoint with the form data
+        fetch('/call-model', {
+            method: 'POST',
+            body: formData
+        })
+
+        // Convert the response from the server to JSON format
+        // This assumes that the server response is JSON encoded
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            
+            //here we display the results via HTML element with ID 'modelOutput'
+            // JSON.stringify is used to convert the JSON object into a string
+            document.getElementById('modelOutput').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            // If there's an error in the network request or backend its outputted here in console.log
+            console.error('Error:', error);
+        });
+    }
+    </script>
+</body>
+</html>
